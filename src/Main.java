@@ -11,12 +11,20 @@ public class Main {
         Random r = new Random();
 
 
-        int i = r.nextInt(2);
-        if (i == 1) {
-            e1.attendance(true);
-            e1.calculateWage();
-        } else {
-            e1.attendance(false);
+        int i = r.nextInt(3);
+        switch (i) {
+            case 1 -> {
+                e1.attendance(true);
+                e1.normalWorkDay = 8;
+                e1.calculateWage();
+            }
+            case 2 -> {
+                e1.attendance(true);
+                System.out.println("Part-time today");
+                e1.normalWorkDay = 4;
+                e1.calculateWage();
+            }
+            default -> e1.attendance(false);
         }
     }
 }
