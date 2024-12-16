@@ -14,6 +14,7 @@ public class Main {
         int i = r.nextInt(2);
         if (i == 1) {
             e1.attendance(true);
+            e1.calculateWage();
         } else {
             e1.attendance(false);
         }
