@@ -9,22 +9,20 @@ public class Main {
         System.out.println("Welcome to Employee Wage Computation Program");
         Employee e1 = new Employee("Ram", 123);
         Random r = new Random();
-
-
-        int i = r.nextInt(3);
-        switch (i) {
-            case 1 -> {
-                e1.attendance(true);
-                e1.normalWorkDay = 8;
-                e1.calculateWage();
+        int monthlyWage = 0;
+        for (int day = 1; day <= 20; day++) {
+            int i = r.nextInt(3);
+            switch (i) {
+                case 1 -> e1.attendance(true);
+                case 2 -> {
+                    e1.attendance(true);
+                    System.out.println("Part-time today");
+                    e1.normalWorkDay = 4;
+                }
+                default -> e1.attendance(false);
             }
-            case 2 -> {
-                e1.attendance(true);
-                System.out.println("Part-time today");
-                e1.normalWorkDay = 4;
-                e1.calculateWage();
-            }
-            default -> e1.attendance(false);
+            monthlyWage += e1.calculateWage();
         }
+        System.out.println("Total Monthly Wage: " + monthlyWage);
     }
 }
