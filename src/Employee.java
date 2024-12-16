@@ -4,27 +4,29 @@ public class Employee {
     boolean attendance = false;
     int normalWorkDay = 8;
     int salPerHour = 20;
+    double dailySalary = 0;
 
     public Employee(String name, int id) {
         this.name = name;
         this.id = id;
     }
 
-    public void attendance(boolean isPresent) {
-        if (isPresent) {
+    public void attendance(boolean a) {
+        if (a) {
             attendance = true;
             System.out.println("Employee is present");
         } else {
-            attendance = false;
             System.out.println("Employee is absent");
         }
     }
-    public void calculateWage() {
+
+    public int calculateWage() {
         if (attendance) {
-            int dailySalary = normalWorkDay * salPerHour;
-            System.out.println("Daily Wage: " + dailySalary);
+            dailySalary = normalWorkDay * salPerHour;
         } else {
-            System.out.println("No wage, as employee is absent.");
+            dailySalary = 0;
         }
+        System.out.println("Daily Salary: " + dailySalary);
+        return (int) dailySalary;
     }
 }
