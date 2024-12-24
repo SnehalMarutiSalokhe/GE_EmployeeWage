@@ -2,8 +2,8 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        Employee e1 = new Employee("Ram", 123);
-
-        Employee.computeEmployeeWage();
+        Employee.computeEmployeeWageForCompany("Company A", 20, 20, 100);
+        Employee.computeEmployeeWageForCompany("Company B", 25, 22, 120);
+        Employee.computeEmployeeWageForCompany("Company C", 30, 18, 90);
     }
 }
