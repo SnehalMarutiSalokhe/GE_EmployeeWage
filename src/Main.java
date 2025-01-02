@@ -1,12 +1,11 @@
 public class Main {
     public static void main(String[] args) {
-        EmpWageBuilder companyA = new EmpWageBuilder("Company A", 20, 20, 100);
-        companyA.computeEmployeeWage();
+        EmpWageBuilder empWageBuilder = new EmpWageBuilder();
 
-        EmpWageBuilder companyB = new EmpWageBuilder("Company B", 25, 22, 120);
-        companyB.computeEmployeeWage();
+        empWageBuilder.addCompanyEmpWage("Company A", 20, 20, 100);
+        empWageBuilder.addCompanyEmpWage("Company B", 25, 22, 120);
+        empWageBuilder.addCompanyEmpWage("Company C", 30, 18, 90);
 
-        EmpWageBuilder companyC = new EmpWageBuilder("Company C", 30, 18, 90);
-        companyC.computeEmployeeWage();
+        empWageBuilder.computeEmployeeWage();
     }
 }
