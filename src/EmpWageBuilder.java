@@ -1,18 +1,24 @@
 import java.util.ArrayList;
 import java.util.Random;
 
-public class EmpWageBuilder {
+// EmpWageBuilder implements the IEmployeeWage interface
+public class EmpWageBuilder implements IEmployeeWage {
     private final ArrayList<CompanyEmpWage> companyEmpWageList;
 
+    // Constructor
     public EmpWageBuilder() {
         companyEmpWageList = new ArrayList<>();
     }
 
+    // Add a company to the list
+    @Override
     public void addCompanyEmpWage(String companyName, int wagePerHour, int maxWorkingDays, int maxWorkingHours) {
         CompanyEmpWage companyEmpWage = new CompanyEmpWage(companyName, wagePerHour, maxWorkingDays, maxWorkingHours);
         companyEmpWageList.add(companyEmpWage);
     }
 
+    // Compute wages for all companies
+    @Override
     public void computeEmployeeWage() {
         for (CompanyEmpWage companyEmpWage : companyEmpWageList) {
             computeEmployeeWageForCompany(companyEmpWage);
