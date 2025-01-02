@@ -5,6 +5,7 @@ public class CompanyEmpWage {
     int maxWorkingHours;
     int totalMonthlyWage;
 
+    // Constructor
     public CompanyEmpWage(String companyName, int wagePerHour, int maxWorkingDays, int maxWorkingHours) {
         this.companyName = companyName;
         this.wagePerHour = wagePerHour;
@@ -13,10 +14,12 @@ public class CompanyEmpWage {
         this.totalMonthlyWage = 0;
     }
 
+    // Setter for Total Wage
     public void setTotalMonthlyWage(int totalMonthlyWage) {
         this.totalMonthlyWage = totalMonthlyWage;
     }
 
+    // Display Company Wage Details
     public void displayWageDetails() {
         System.out.println("\n--- Summary for " + companyName + " ---");
         System.out.println("Wage Per Hour: " + wagePerHour);
