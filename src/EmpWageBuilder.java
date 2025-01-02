@@ -1,15 +1,26 @@
+import java.util.ArrayList;
 import java.util.Random;
 
 public class EmpWageBuilder {
-    private CompanyEmpWage companyEmpWage;
+    private final ArrayList<CompanyEmpWage> companyEmpWageList;
 
-    // Constructor to initialize company details
-    public EmpWageBuilder(String companyName, int wagePerHour, int maxWorkingDays, int maxWorkingHours) {
-        this.companyEmpWage = new CompanyEmpWage(companyName, wagePerHour, maxWorkingDays, maxWorkingHours);
+    public EmpWageBuilder() {
+        companyEmpWageList = new ArrayList<>();
     }
 
-    // Method to compute Employee Wage
+    public void addCompanyEmpWage(String companyName, int wagePerHour, int maxWorkingDays, int maxWorkingHours) {
+        CompanyEmpWage companyEmpWage = new CompanyEmpWage(companyName, wagePerHour, maxWorkingDays, maxWorkingHours);
+        companyEmpWageList.add(companyEmpWage);
+    }
+
     public void computeEmployeeWage() {
+        for (CompanyEmpWage companyEmpWage : companyEmpWageList) {
+            computeEmployeeWageForCompany(companyEmpWage);
+        }
+    }
+
+    // Compute wage for a single company
+    private void computeEmployeeWageForCompany(CompanyEmpWage companyEmpWage) {
         Random random = new Random();
         int totalHours = 0;
         int totalDays = 0;

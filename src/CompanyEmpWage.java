@@ -19,6 +19,9 @@ public class CompanyEmpWage {
 
     public void displayWageDetails() {
         System.out.println("\n--- Summary for " + companyName + " ---");
+        System.out.println("Wage Per Hour: " + wagePerHour);
+        System.out.println("Max Working Days: " + maxWorkingDays);
+        System.out.println("Max Working Hours: " + maxWorkingHours);
         System.out.println("Total Monthly Wage: " + totalMonthlyWage);
     }
 }
