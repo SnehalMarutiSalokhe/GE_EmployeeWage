@@ -28,3 +28,5 @@ public class CompanyEmpWage {
         System.out.println("Total Monthly Wage: " + totalMonthlyWage);
     }
 }
+
+
